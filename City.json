@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "objet": [
         {
@@ -20,27 +19,4 @@
             "city": "Martlock"
         }
     ]
-=======
-{
-    "objet": [
-        {
-            "city": "Caerleon"
-        },
-        {
-            "city": "Bridgewatch"
-        },
-        {
-            "city": "Lymhurst"
-        },
-        {
-            "city": "Fort Sterling"
-        },
-        {
-            "city": "Thetford"
-        },
-        {
-            "city": "Martlock"
-        }
-    ]
->>>>>>> c9bb5ccb7cbf1582f4378abf932f92d64b22824e
 }
