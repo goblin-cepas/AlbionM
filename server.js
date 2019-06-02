@@ -24,18 +24,23 @@ function loadPage(page, response) {
 function global() {
     let cities = JSON.parse(fs.readFileSync('City.json', 'utf8'));
     let items = JSON.parse(fs.readFileSync('IdItem.json', 'utf8'));
-    console.log(items.objet);
     for (var i in items.objet) {
-        for( var c in cities.objet){
+        console.log('|-- ' + items.objet[i].ID + ' --|');
+        for (var c in cities.objet) {
             comRequest(items.objet[i].ID, cities.objet[c].city);
         }
+        console.log('');
     }
 }
 
 function comRequest(item, city) {
     request('https://www.albion-online-data.com/api/v1/stats/Prices/' + item + '?locations=' + city, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body);
+            let result = JSON.parse(body);
+//            console.log(result);
+            if (result[0]) {
+                console.log('|-- ' + result[0].city + '-- VENTE --|' + result[0].buy_price_max + ' |-- ' + result[0].city + '-- ACHAT--|' + result[0].sell_price_min);
+            }
         }
         else {
             console.log("Error " + response.statusCode);
